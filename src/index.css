@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --btn-primary: #00aa6c;
+  --btn-secondary: #1b729d;
+  --btn-mini: #24baec;
+}
