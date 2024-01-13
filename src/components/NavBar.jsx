@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Avatar from "./Avatar";
+import Header from "./header/Header";
 
 
 
@@ -31,9 +32,11 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-end">
-        {user.email? <Avatar user={user}/> : <a href='/login' className="btn btn-sm">Login</a>}
+        {/* {user.email? <Avatar user={user}/> : <a href='/login' className="btn btn-sm">Login</a>} */}
       </div>
+
     </div>
+    
   );
 };
 

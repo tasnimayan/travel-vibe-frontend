@@ -1,31 +1,26 @@
 import { Routes, Route } from 'react-router-dom'
 import ErrorPage from '../pages/ErrorPage'
 import TourDetailsPage from '../pages/Tours/TourDetailsPage'
-import Overview from '../components/Overview'
-import Policy from '../components/Policy'
-import Packages from '../components/Packages';
+import Overview from '../components/tour/Overview'
+import Policy from '../components/tour/Policy'
+import Packages from '../components/tour/Packages';
 import ProfilePage from '../pages/Users/ProfilePage';
 
-import React from 'react'
 import LoginPage from '../pages/Users/LoginPage'
 import PrivateRoute from './privateRoute'
-import Loading from '../pages/Loading'
-// import HomePage from './pages/HomePage'
-const LazyHome = React.lazy(()=>import('../pages/HomePage'))
+
 import SignUpPage from './../pages/Users/SignUpPage';
 import AccountRecoverPage from './../pages/Users/AccountRecoverPage';
 import CreateTourPage from '../pages/Tours/CreateTourPage'
+import HomePage from '../pages/HomePage'
+import Itinerary from '../components/tour/Itinerary'
 
 
 const Router = () => {
   return (
     <Routes>
        {/* General Routes that is accessible to all non-account users */}
-        <Route path="/" element={
-        <React.Suspense fallback ={<Loading/>} >  {/* fallback can take any component to show while loading */}
-          <LazyHome/>
-        </React.Suspense> } />
-        
+        <Route path="/" element={<HomePage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/sign-up' element={<SignUpPage />} />
         <Route path='/tours' element={<TourDetailsPage/>} />
@@ -35,7 +30,7 @@ const Router = () => {
           <Route index element={<Overview />} />  {/* To set what to show at start of parent router*/}
           <Route path='overview' element={<Overview />} />
           <Route path='packages' element={<Packages />} />
-          <Route path='itinerary' element={<Packages />} />
+          <Route path='itinerary' element={<Itinerary />} />
           <Route path='policy' element={<Policy />} />
         </Route>
 

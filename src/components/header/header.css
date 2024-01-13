@@ -1,0 +1,64 @@
+.header {
+  /* background-color: #003580; */
+  background-image: url("https://img.freepik.com/free-photo/beautiful-tropical-beach-sea-with-coconut-palm-tree-paradise-island_74190-1050.jpg?w=826&t=st=1704900002~exp=1704900602~hmac=80e08fbd804b2b954a9073cd4f5320ee2271a5dbac7bc8cf70dc88ad7bdb950c");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 80vh;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.headerBtn {
+  background-color: #0071c2;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.headerSearch {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  padding-left: 1em;
+  font-size: 20px;
+  margin-bottom: 4em;
+  color: #000;
+}
+
+.headerIcon {
+  color: gray;
+}
+
+.headerSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerSearchInput {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #000;
+}
+.headerSearchInput::placeholder {
+  color: #000;
+}
