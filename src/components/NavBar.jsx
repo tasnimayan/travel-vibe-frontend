@@ -32,6 +32,7 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-end">
+        <Link to="/login">Login</Link>
         {/* {user.email? <Avatar user={user}/> : <a href='/login' className="btn btn-sm">Login</a>} */}
       </div>
 

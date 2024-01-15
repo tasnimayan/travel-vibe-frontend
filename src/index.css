@@ -7,3 +7,11 @@
   --btn-secondary: #1b729d;
   --btn-mini: #24baec;
 }
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

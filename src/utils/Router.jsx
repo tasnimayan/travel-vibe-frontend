@@ -22,7 +22,7 @@ const Router = () => {
        {/* General Routes that is accessible to all non-account users */}
         <Route path="/" element={<HomePage />} />
         <Route path='/login' element={<LoginPage />} />
-        <Route path='/sign-up' element={<SignUpPage />} />
+        <Route path='/signup' element={<SignUpPage />} />
         <Route path='/tours' element={<TourDetailsPage/>} />
         
         <Route path="/tours/:tourId" element={<TourDetailsPage/>} >
@@ -38,8 +38,8 @@ const Router = () => {
 
         {/* Private Route For only logged users */}
         <Route element={<PrivateRoute />}>
-          <Route path='/users/delete' element={<ProfilePage />} />
-          <Route path='/users/:userId' element={<ProfilePage />} />
+          <Route path='/profile/delete' element={<ProfilePage />} />
+          <Route path='/profile/:userId' element={<ProfilePage />} />
           
         </Route>
 

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 
-import { FaRegEye } from "react-icons/fa";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { apiLogin } from "../../api/API";
 import { userLogin } from "../../redux/state/user/authSlice";
 
@@ -11,6 +11,7 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   
   const [user, setUser] = useState({email:'', password:''})
+  const [passwordType, setPasswordType] = useState("password");
   const navigate = useNavigate()
   const location = useLocation()
   const eye = useRef();
@@ -19,6 +20,7 @@ const LoginPage = () => {
   const handleLogin = async (e) =>{
     e.preventDefault();
     const data = await apiLogin(user.email, user.password)
+    console.log(data)
     
     if(data.user){
       dispatch(userLogin({user:data.user, token:data.token}))
@@ -29,15 +31,18 @@ const LoginPage = () => {
   
   // Pass hide and show icon feature
   function passwordToggle() {
-    if(eye.current.getAttribute('type') == 'password')
+    if(passwordType==="password"){
       eye.current.setAttribute('type','text')
-    else
+      setPasswordType("text")
+    }
+    else{
       eye.current.setAttribute('type','password')
-
+      setPasswordType("password")
+    }
   }
   
   return (
-    <div className="flex justify-center items-center border-2 py-24">
+    <div className="flex justify-center items-center py-24">
       <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
         <div
           className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-gradient-to-tr from-gray-900 to-gray-800 bg-clip-border shadow-gray-900/20">
@@ -64,7 +69,11 @@ const LoginPage = () => {
               Password
             </label>
 
-            <FaRegEye className="absolute top-3 right-2 cursor-pointer" onClick={passwordToggle}/>
+            <button className="absolute top-3 right-2 cursor-pointer p-1" onClick={passwordToggle}>
+              {
+                passwordType==="password"? <FaRegEye/> :<FaRegEyeSlash/>
+              }
+            </button>
             
           </div>
           <div className="-ml-2.5">
@@ -93,17 +102,75 @@ const LoginPage = () => {
           <button onClick={(e)=>handleLogin(e)}
             className="block w-full select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button">
-            Sign In
+            Login
           </button>
+
+          <div className="mt-6">
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300"></div>
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 bg-white text-gray-500">Or continue with</span>
+            </div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-3 gap-3">
+            <div>
+              <a href="#" className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                <img className="h-5 w-5" src="https://www.svgrepo.com/show/512120/facebook-176.svg" alt="" />
+              </a>
+            </div>
+            <div>
+              <a href="#" className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                <img className="h-5 w-5" src="https://www.svgrepo.com/show/513008/twitter-154.svg" alt="" />
+              </a>
+            </div>
+            <div>
+              <a href="#" className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                <img className="h-6 w-6" src="https://www.svgrepo.com/show/506498/google.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+
           <p className="flex justify-center mt-6 font-sans text-sm antialiased font-light leading-normal text-inherit">
             Don&apos;t have an account?
-            <a href="#signup"
+            <a href="/signup"
               className="block ml-1 font-sans text-sm antialiased font-bold leading-normal text-blue-gray-900">
               Sign up
             </a>
           </p>
         </div>
       </div>
+
+      <div className="w-1/2 hidden md:flex items-center justify-center">
+        
+        <div className="w-80">
+          <div className="grid grid-cols-2 gap-4">
+              <div className="grid gap-4">
+                <div>
+                    <img className="h-48 max-w-full rounded-lg object-cover" src="https://img.freepik.com/free-photo/chair-table-dinning-beach-sea-with-blue-sky_74190-6094.jpg?w=826&t=st=1705319313~exp=1705319913~hmac=a81a49cd789c70f011ef77c6870ba92b4cffd965dd85195b0b4c4deb5f265ac0" alt="" />
+                </div>
+                <div>
+                    <img className="h-32 max-w-full rounded-lg  object-cover" src="https://img.freepik.com/free-photo/backpacker-standing-sunrise-viewpoint-ja-bo-village-mae-hong-son-province-thailand_335224-1356.jpg?w=826&t=st=1705319011~exp=1705319611~hmac=f44ccddfb4559cbf681e2646397ddd49d1e3fd729753b1e63a5b4ae39dc5085e" alt="" />
+                </div>
+
+              </div>
+              <div className="grid gap-4">
+                <div>
+                    <img className="h-40 max-w-full rounded-lg  object-cover" src="https://img.freepik.com/free-photo/girl-jumping-with-excitement-doorway-with-sea_181624-20834.jpg?w=740&t=st=1705319373~exp=1705319973~hmac=28bd305f3149526638c24638ca56bdad30183af5cc2e47e92afe4ce577d82dd1" alt="" />
+                </div>
+                <div>
+                    <img className="h-56 max-w-full rounded-lg  object-cover" src="https://img.freepik.com/premium-vector/travel-vector-poster-design-let-s-go-travel-text-with-luggage-passport-camera-destination_572293-2377.jpg?w=740" alt="" />
+                </div>
+              </div>
+          </div>
+          
+        </div>
+
+      </div>
+
 
     </div>
   );
