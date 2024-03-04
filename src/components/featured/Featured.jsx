@@ -1,6 +1,16 @@
-// import useFetch from "../../hooks/useFetch";
-import "./featured.css";
+
 import CategoryCard from "../categoryList/CategoryCard";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination } from 'swiper/modules';
+
 
 const Featured = () => {
   let data = [
@@ -67,12 +77,49 @@ const Featured = () => {
 
   return (
     <>
-     <div className="featured">
+      <div className="px-4 md:px-20 py-12">
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={5}
+          pagination={{
+            clickable: true,
+          }}
+          grabCursor = {true}
+          breakpoints={{
+            '@0.75': {
+              slidesPerView: 3,
+              // spaceBetween: 5,
+            },
+            '@1.00': {
+              slidesPerView: 5,
+              // spaceBetween: 5,
+            },
+            '@1.50': {
+              slidesPerView: 6,
+              // spaceBetween: 5,
+            },
+            '@1.75': {
+              slidesPerView: 8,
+              // spaceBetween: 5,
+            },
+          }}
+          // modules={[Pagination]}
+          className="mySwiper"
+        >
           {
-            data.map((item, index) =><CategoryCard item={item} key={index} />)
+              data.map((item, index) => {
+                return (
+                  <SwiperSlide key={index} >
+                    <CategoryCard item={item} />
+                  </SwiperSlide>
+                )
+              }
+            )
           }
-        
-    </div>
+        </Swiper>
+
+          
+      </div>
     </>
   );
 };

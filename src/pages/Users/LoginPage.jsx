@@ -6,12 +6,15 @@ import { useDispatch } from "react-redux";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { apiLogin } from "../../api/API";
 import { userLogin } from "../../redux/state/user/authSlice";
+import { useCookies } from "react-cookie";
+import FullPageLoader from './../../components/utility/FullPageLoader';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
   
   const [user, setUser] = useState({email:'', password:''})
   const [passwordType, setPasswordType] = useState("password");
+  const [cookie, setCookie] = useCookies(["tv"]);
   const navigate = useNavigate()
   const location = useLocation()
   const eye = useRef();
@@ -23,9 +26,11 @@ const LoginPage = () => {
     console.log(data)
     
     if(data.user){
+      setCookie("tv", data.token)
       dispatch(userLogin({user:data.user, token:data.token}))
       navigate(location.state?.path || '/')
     }
+    
     
   }
   
@@ -43,6 +48,7 @@ const LoginPage = () => {
   
   return (
     <div className="flex justify-center items-center py-24">
+        {/* <FullPageLoader /> */}
       <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
         <div
           className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-gradient-to-tr from-gray-900 to-gray-800 bg-clip-border shadow-gray-900/20">
@@ -170,8 +176,6 @@ const LoginPage = () => {
         </div>
 
       </div>
-
-
     </div>
   );
 };

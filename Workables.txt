@@ -1,5 +1,9 @@
 # Category slider is not sliding .
+# Profile Option show on avatar click 
 # 
-
-
-
+#
+#
+#
+#
+#
+#

@@ -14,6 +14,7 @@ import AccountRecoverPage from './../pages/Users/AccountRecoverPage';
 import CreateTourPage from '../pages/Tours/CreateTourPage'
 import HomePage from '../pages/HomePage'
 import Itinerary from '../components/tour/Itinerary'
+import ComponentGallery from '../pages/ComponentGallery'
 
 
 const Router = () => {
@@ -48,6 +49,7 @@ const Router = () => {
 
 
 
+        <Route path='/components' element={<ComponentGallery />} />
 
         <Route path='*' element = {<ErrorPage/>} />
 

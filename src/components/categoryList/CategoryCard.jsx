@@ -1,14 +1,13 @@
 
 const CategoryCard = ({item}) => {
   return (
-    <div className="feature-card">
+    <div className="category-card">
       <img
         src={item.image}
         alt=""
-        className="feature-image rounded-lg"
+        className="w-full h-full object-cover rounded-lg"
       />
-      <div className="bg-overlay rounded-lg"></div>
-      <div className="feature-text">
+      <div className="absolute bottom-0 w-full text-center p-1">
         <h1>{item.title}</h1>
       </div>
     </div>

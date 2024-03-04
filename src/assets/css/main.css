@@ -1,0 +1,64 @@
+/* ============= Utility classes ============== */
+#root {
+  overflow-x: hidden;
+}
+
+.font-poppins {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.text-montserrat {
+  font-family: "Montserrat", "Roboto", sans-serif;
+}
+
+svg {
+  display: inline-block;
+}
+
+i {
+  display: inline-block;
+}
+
+/* ============= Top category Card Design ============== */
+.category-card {
+  position: relative;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100px;
+  width: 120px;
+}
+
+.category-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ============= Slider Card Design ============== */
+.min-card {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.min-card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 0;
+}
+
+.min-card img {
+  transition: all 0.5s ease;
+}
+.min-card:hover img {
+  transform: scale(1.1);
+}

@@ -1,11 +1,12 @@
 
-import NavBar from "../components/NavBar";
-import Footer from "../components/footer/Footer";
+import Nav from "./Nav";
+import Footer from "./Footer";
 
-function DashboardLayout() {
+function DashboardLayout(props) {
   return (
     <>
-      <NavBar />
+      <Nav />
+      {props.children}
       <Footer />
     </>
   );
