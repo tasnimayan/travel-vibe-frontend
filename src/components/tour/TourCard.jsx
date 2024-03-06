@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "./tourCard.css";
 import {FaRegUser, FaRegCalendar, FaStar, FaHeart, FaComment} from 'react-icons/fa'
 import { CiLocationOn } from "react-icons/ci";
+import AvatarBox from './../utility/AvatarBox';
 
 
 
@@ -10,26 +10,26 @@ const TourCard = () => {
     _id:"20014", photos:['https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg'], title:"Rangamati, Sajek Valley 3 nights and 2 days", distance:250, desc:"Description goes from here. Tour details is written here for the description purpose. Some other details will be shown after the details page is opened", rating:4.5, cheapestPrice:4550
 }
   return (
-    <div className="p-2 gap-6 mb-6 bg-white rounded-xl shadow-lg border md:flex md:flex-row">
-      <div className="w-full md:w-96 h-80 mx-h-96">
-        <img src={item.photos[0]} className="w-full h-full object-cover rounded-lg" />
-      </div>
-      <div className="details flex flex-col justify-between border"> 
-        <div className="tour card-desc">
-          {/* Organizer Avatar */}
-          <div className="flex">
-            <div>
-              <img src={item.photos[0]} className="rounded-full h-8 w-8" alt="" />
-            </div>
-            <div className="ml-2 flex flex-col justify-center">
-              <h4 className="text-sm font-semibold leading-4 ">Bee tour and travels</h4>
-              <p className="text-xs leading-3">
-                <span className="pr-4">Organizer</span>
-                <span><FaStar className="text-yellow-400 inline-block"/> 4.5</span>
-              </p>
-              
-            </div>
+    <div className="p-2 gap-6 bg-white rounded-xl shadow-lg border md:flex md:flex-row">
+      {/* Image section */}
+      <div className="w-full md:w-1/3">
+        <div className="grid grid-cols-2 gap-1">
+          <div className="col-span-2">
+            <img src={item.photos[0]} className="w-full h-full object-cover rounded-lg" />
+
           </div>
+          <img src={item.photos[0]} className="w-full h-full object-cover rounded-lg" />
+          <img src={item.photos[0]} className="w-full h-full object-cover rounded-lg" />
+
+        </div>
+      </div>
+
+{/* Other description */}
+      <div className="flex flex-col justify-between w-2/3"> 
+        <div className="flex flex-col gap-2">
+
+          {/* Organizer Avatar */}
+          <AvatarBox details={{name:'Bee Tours and Travel', time:'2 min ago', isVerified:false}}/>
 
           <div className="flex flex-row gap-2">
             {/* Tour Details  */}

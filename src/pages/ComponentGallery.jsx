@@ -5,11 +5,24 @@ import SliderCard from './../components/tour/SliderCard';
 import LogoCard from './../components/tour/LogoCard';
 import FAQ from "../components/tour/FAQ";
 import GuideCard from "../components/tour/GuideCard";
+import SocialPost from "./Users/SocialPost";
+import DashboardLayout from "../layout/DashboardLayout";
+import TourCardMini from "../components/tour/TourCardMini";
 
 const ComponentGallery = () => {
   return (
-    <div>
-      <div>
+  <DashboardLayout>
+
+<div className="p-12 grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12">
+    <TourCardMini />
+  </div>
+    <div className="bg-[#F1F5F9] py-8">
+
+
+      <div className="flex flex-col gap-6 justify-center items-center md:w-[40rem]">
+        <SocialPost />
+      </div>
+      <div className="p-12 grid gap-4 md:grid-cols-3 lg:grid-cols-4">
         <GuideCard />
       </div>
 
@@ -40,7 +53,7 @@ const ComponentGallery = () => {
       </div>
     </div>
 
-    <div>
+    <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-12">
       <HotelCard />
     </div>
     
@@ -51,6 +64,8 @@ const ComponentGallery = () => {
     <FAQ />
       
   </div>
+
+  </DashboardLayout>
   );
 };
 

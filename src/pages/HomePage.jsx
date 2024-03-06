@@ -1,44 +1,67 @@
-import React from 'react'
-import TrendingList from '../components/categoryList/TrendingList';
+// Home / Index page that loads on the root url
 
-const LazyTours = React.lazy(()=>import('./Tours/AllToursPage'))
-import Header from './../components/header/Header';
-import PostSkeleton from './../components/skeletons/PostSkeleton';
-import AsideOptions from './../components/aside/AsideOptions';
-import Trending from './../components/aside/Trending';
+import Header from '../components/header/Header';
 import DashboardLayout from '../layout/DashboardLayout';
-import Featured from './../components/featured/Featured';
+import PopularDestinations from '../components/featured/PopularDestinations';
+import TrendingList from '../components/categoryList/TrendingList';
+import MinimalCard from './../components/tour/MinimalCard';
+import SliderCard from './../components/tour/SliderCard';
+import TourCardMini from '../components/tour/TourCardMini';
+import SectionHeading from '../components/tour/SectionHeading';
+import About from '../components/home/About';
+import EliteSection from '../components/home/EliteSection';
 
 
 const HomePage = () => {
   return (
     <DashboardLayout>
       <div>
+        {/* Hero Image with search bar */}
         <Header />
-        <div className='p-6'>
-          <Featured />
-        </div>
-        <div className="md:px-4 lg:px-24 bg-gray-50">
-          
-          <div className="flex flex-row py-20 lg:gap-8 md:gap-2">
-            <aside className="hidden lg:block w-full lg:w-3/12 rounded-xl sticky top-0 bg-white p-2 h-auto">
-              <Trending />
-              <AsideOptions />  
-            </aside>
 
-            
-            <main role="main" className="w-full lg:w-9/12 rounded-xl pl-4 ">
-              <div className='mb-12'>
-                <h4 className='text-3xl my-4 w-full'>Trending Tours</h4>        
-                <TrendingList />
-              </div>
-              <React.Suspense fallback ={<PostSkeleton />} >  {/* fallback can take any component to show while loading */}
-                <LazyTours />
-              </React.Suspense>
-            </main>
+        <About />
+
+        <div className='container-pad'>
+          <SectionHeading
+            title = "Explore Nearby"
+            subtitle = "Discover great places near where you live"
+            align = "center"
+          />
+          <div className="px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 md:gap-8">
+            {
+              [1, 2, 3, 4].map((item)=><MinimalCard key={item}/>)
+            }
           </div>
         </div>
+
       </div>
+
+      <div className='px-[8rem] bg-slate-200 py-16'>
+
+        <SectionHeading 
+          title="Thrilling Tour Plans"
+          align="center"
+        />
+        <div className=" grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            [2,3,5].map((item)=><TourCardMini key={item}/>)
+          }
+        </div>
+      </div>
+
+      <div>
+        <EliteSection />
+      </div>
+      
+
+
+      <div className="flex gap-8 p-8">
+        {
+          [1, 2, 3, 4].map((item)=><SliderCard key={item}/>)
+        }
+      </div>
+
+
 
     </DashboardLayout>
   );

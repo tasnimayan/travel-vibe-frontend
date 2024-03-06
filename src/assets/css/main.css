@@ -1,6 +1,7 @@
 /* ============= Utility classes ============== */
 #root {
   overflow-x: hidden;
+  background: var(--bg-main);
 }
 
 .font-poppins {
@@ -9,6 +10,9 @@
 
 .text-montserrat {
   font-family: "Montserrat", "Roboto", sans-serif;
+}
+.text-arial {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 svg {
@@ -61,4 +65,37 @@ i {
 }
 .min-card:hover img {
   transform: scale(1.1);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.top-nav .active {
+  background-color: aqua IMP !important;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+}
+.about-us::before,
+.about-us::after {
+  content: "";
+  width: 15px;
+  height: 2px;
+  background-color: #000;
+  margin: 0 5px;
+}
+
+.elite-item.active {
+  background-image: url("https://img.taste.com.au/CMd-C-zY/w643-h428-cfill-q90/taste/2020/07/landmark-pagoda-in-doi-inthanon-national-park-at-chiang-mai-thailand-163355-1.jpg");
+  color: white;
 }

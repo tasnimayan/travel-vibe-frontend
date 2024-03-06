@@ -8,11 +8,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// import required modules
-import { Pagination } from 'swiper/modules';
 
-
-const Featured = () => {
+const PopularDestinations = () => {
   let data = [
   {
       image:"https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o=",
@@ -124,4 +121,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+export default PopularDestinations;

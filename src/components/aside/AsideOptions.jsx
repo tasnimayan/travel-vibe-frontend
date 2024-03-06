@@ -1,7 +1,7 @@
 
 const AsideOptions = () => {
   return (
-      <div className=" bg-white shadow-md rounded-2xl p-4 w-full mb-4">
+      <div className=" bg-white shadow-md rounded-2xl p-4 w-full">
         <h4 className='text-xl w-full'>Filter By</h4>
         <ul>
           <li>

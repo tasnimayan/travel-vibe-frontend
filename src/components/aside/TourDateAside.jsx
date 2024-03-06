@@ -21,9 +21,12 @@ const TourDateAside = () => {
             </select>            
           </li>
         </ul>
-        <h5>Starting from</h5>
-        <h4>BDT 3999</h4>
-        <a href="/" className="block border-gray-100 bg-orange-400 rounded m-2 px-4 py-2 text-white shadow-sm shadow-neutral-300">
+
+        <div className="text-center">
+          <h5>Starting from</h5>
+          <h4>BDT 3999</h4>
+        </div>
+        <a href="/" className="block border-gray-100 bg-orange-400 rounded m-2 px-4 py-2 text-white text-center shadow-sm shadow-neutral-300">
           Book Now
         </a>
 

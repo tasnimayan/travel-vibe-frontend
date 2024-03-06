@@ -8,6 +8,7 @@
   --btn-primary: #00aa6c;
   --btn-secondary: #1b729d;
   --btn-mini: #24baec;
+  --bg-main: #f9fafb;
 
   font-family: "Roboto", sans-serif;
 }
@@ -17,12 +18,27 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Poppins";
   }
 
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  .top-nav .nav-item {
+    @apply py-3 px-4 cursor-pointer hover:bg-gray-200 hover:text-gray-700 text-sm rounded;
+  }
+
+  .top-nav .nav-item.active {
+    @apply py-3 px-4 cursor-pointer bg-gray-200 hover:text-gray-700 text-sm rounded;
+  }
+
+  .container-pad {
+    @apply px-4 py-20 md:px-16 lg:px-24;
+  }
+
+  .image-circle {
+    border-radius: 50%;
   }
 }

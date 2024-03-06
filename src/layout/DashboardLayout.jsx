@@ -6,7 +6,9 @@ function DashboardLayout(props) {
   return (
     <>
       <Nav />
-      {props.children}
+      <div className="mt-20">
+        {props.children}
+      </div>
       <Footer />
     </>
   );
