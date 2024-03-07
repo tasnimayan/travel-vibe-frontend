@@ -1,23 +1,24 @@
 import { Link } from "react-router-dom";
-import {FaRegUser, FaRegCalendar, FaStar, FaHeart, FaComment} from 'react-icons/fa'
+import {FaRegUser} from 'react-icons/fa'
 import { CiLocationOn } from "react-icons/ci";
 import AvatarBox from './../utility/AvatarBox';
 
 
 
-const TourCard = () => {
+const TourCardSmall = () => {
   let item = {
     _id:"20014", photos:['https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg'], title:"Rangamati, Sajek Valley 3 nights and 2 days", distance:250, desc:"Description goes from here. Tour details is written here for the description purpose. Some other details will be shown after the details page is opened", rating:4.5, cheapestPrice:4550
 }
   return (
-    <div className="p-2 gap-6 bg-white rounded-xl shadow-lg border md:flex md:flex-row">
+    <div className="text-montserrat p-4 gap-6 bg-white rounded-xl shadow-lg border md:flex md:flex-row">
       {/* Image section */}
-      <div className="w-full md:w-1/3">
+      <div className="w-full md:w-2/5 relative">
         <img src={item.photos[0]} className="w-full h-full object-cover rounded-lg" />
+        <div className="absolute top-3 -left-4 text-white bg-black p-2 text-xs rounded-r-md line-clamp-1">3 days/ 4 nights</div>
       </div>
 
-{/* Other description */}
-      <div className="flex flex-col justify-between w-2/3"> 
+      {/* Description */}
+      <div className="flex flex-col justify-between md:w-3/5"> 
         <div className="flex flex-col gap-2">
 
           {/* Organizer Avatar */}
@@ -25,22 +26,19 @@ const TourCard = () => {
 
           <div className="flex flex-row gap-2">
             {/* Tour Details  */}
-            <div className="text-sm w-2/3">
-              <h2 className="text-xl text-gray-700 font-semibold mb-2 leading-6">{item.title}</h2>
-              <div className="flex pb-2">
-                <FaRegCalendar/>
-                {/* <span>3 days</span> */}
-                <FaRegUser />
-                {/* <span>25 People going</span> */}
-                <CiLocationOn />
-                <span>Sayedabad Bus Terminal</span>
+            <div className="w-2/3">
+              <h2 className="text-lg text-black font-[500] mb-2 line-clamp-2">{item.title} another thin is </h2>
+              <div className="flex pb-2 justify-between text-xs">
+                <span>
+                  <FaRegUser className="inline-block mb-1"/>
+                  1 to 25 People</span>
+
+                <div>
+                {item.rating && 
+                  <span className="font-bold py-1 px-2 border rounded mr-2">{item.rating}</span>}
+                  <span>370 reviews</span> <br/>
+                </div>
               </div>
-
-              {item.rating && 
-              <span className="font-bold py-1 px-2 border rounded">{item.rating}</span>}
-              <span>370 reviews</span> <br/>
-
-
             </div>
             {/* Price section */}
             <div className="flex flex-col w-1/3">
@@ -54,8 +52,9 @@ const TourCard = () => {
 
           </div>
           {/* Tour details */}
-          <p className="text-sm">{item.desc}
-          </p>
+          <div className="pb-4">
+            <p className="text-sm line-clamp-3">{item.desc}</p>
+          </div> 
         </div>
         {/* Bottom Buttons */}
         <div className="flex">
@@ -70,4 +69,4 @@ const TourCard = () => {
   );
 };
 
-export default TourCard;
+export default TourCardSmall;

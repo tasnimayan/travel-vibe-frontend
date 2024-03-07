@@ -70,11 +70,16 @@ const HomePage = () => {
       </div>
       
 
-
-      <div className="flex gap-8 p-8">
-        {
-          [1, 2, 3, 4].map((item)=><SliderCard key={item}/>)
-        }
+      <div className="container-pad">
+        <SectionHeading
+          title = "Something Special is going"
+          align = "center"
+          />
+        <div className="flex gap-8 p-8">
+          {
+            [1, 2, 3, 4].map((item)=><SliderCard key={item}/>)
+          }
+        </div>
       </div>
 
       <div>

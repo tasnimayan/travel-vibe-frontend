@@ -11,6 +11,8 @@ import PopularDestinations from '../../components/featured/PopularDestinations';
 import AsideLayout from '../../layout/AsideLayout';
 import TwoColLayout from '../../layout/TwoColLayout';
 import MainColLayout from '../../layout/MainColLayout';
+import TourCardSmall from '../../components/tour/TourCardSmall';
+
 
 
 const TourHomePage = () => {
@@ -44,6 +46,8 @@ const TourHomePage = () => {
           
           {/* Main content section of two column layout */}
           <MainColLayout>
+
+<TourCardSmall />
 
             <React.Suspense fallback ={<PostSkeleton />} >  {/* fallback can take any component to show while loading */}
               <LazyTours />

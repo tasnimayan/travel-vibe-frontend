@@ -1,7 +1,7 @@
 
 const HotelCard = () => {
   return (
-    <div>
+    <div className=" border rounded">
       <div className="relative w-full">
         <div className="relative group/cardGallerySlider">
           <div className="w-full overflow-hidden rounded-xl h-80">
