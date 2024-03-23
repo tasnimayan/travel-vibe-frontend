@@ -56,6 +56,7 @@ const HotelsHomePage = () => {
         </div>
       </div>
 
+
       {/* Show more Button */}
       <div className="bg-gray-300 flex mt-16 justify-center items-center">
         <button disabled="" className="relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6 disabled:bg-opacity-70 bg-primary-6000 hover:bg-primary-700 text-neutral-50  ">

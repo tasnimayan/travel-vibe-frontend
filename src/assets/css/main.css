@@ -94,3 +94,82 @@ i {
   background-color: #000;
   margin: 0 5px;
 }
+
+/* Range Slider style*/
+.rs-range {
+  width: 100%;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    box-shadow: none;
+    background: #034e00;
+    border-radius: 3px;
+    border: 0px solid #010101;
+  }
+  /* &::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: none;
+    background: #ffffff;
+    border-radius: 0px;
+    border: 0px solid #010101;
+  } */
+
+  &::-webkit-slider-thumb {
+    box-shadow: none;
+    border: 0px solid #ffffff;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    height: 32px;
+    width: 10px;
+    border-radius: 10px;
+    background: rgb(10, 134, 51);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -10px;
+  }
+  &::-moz-range-thumb {
+    box-shadow: none;
+    border: 0px solid #ffffff;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    height: 42px;
+    width: 22px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -20px;
+  }
+  &::-moz-focus-outer {
+    border: 0;
+  }
+}
+
+.header {
+  /* background-color: #003580; */
+  background-image: url("https://img.freepik.com/free-photo/beautiful-tropical-beach-sea-with-coconut-palm-tree-paradise-island_74190-1050.jpg?w=826&t=st=1704900002~exp=1704900602~hmac=80e08fbd804b2b954a9073cd4f5320ee2271a5dbac7bc8cf70dc88ad7bdb950c");
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  max-height: 720px;
+}
+
+.headerSearch {
+  background-color: rgba(200, 200, 200, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  padding: 0.25rem 1em;
+  font-size: 20px;
+  margin-bottom: 4em;
+  color: #fff;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}

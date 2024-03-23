@@ -6,7 +6,9 @@ function CommunityLayout(props) {
   return (
     <>
       <Nav />
-      {props.children}
+      <div className="container mx-auto">
+        {props.children}
+      </div>
       <Footer />
     </>
   );

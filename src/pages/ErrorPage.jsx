@@ -1,33 +1,34 @@
+import DashboardLayout from "../layout/DashboardLayout";
 
 const ErrorPage = () => {
   return (
-    <>
-      <section className="relative z-10 bg-gray-300 py-[120px]">
-        <div className="container mx-auto">
-          <div className="-mx-4 flex">
-            <div className="w-full px-4">
-              <div className="mx-auto max-w-[400px] text-center">
-                <h2 className="mb-2 text-[50px] font-bold leading-none text-white sm:text-[80px] md:text-[100px]">
-                  404
-                </h2>
-                <h4 className="mb-3 text-[22px] font-semibold leading-tight text-white">
-                  Oops! That page can’t be found
-                </h4>
-                <p className="mb-8 text-lg text-white">
-                  The page you are looking for it maybe not available
-                </p>
-                <a
-                  href="/"
-                  className="inline-block rounded-lg border border-white px-8 py-3 text-center text-base font-semibold text-white transition hover:bg-white hover:text-primary"
-                >
-                  Go To Home
-                </a>
-              </div>
+    <DashboardLayout>
+      <section className="relative  h-[32rem] flex justify-center items-center">
+        <div className="container">
+          <div className="w-full px-4">
+            <div className="mx-auto text-center">
+              <h2 className="mb-2 text-[50px] font-bold leading-none sm:text-[80px] md:text-7xl">
+                404
+                <span className="text-warning font-normal ms-4">ERROR</span>
+              </h2>
+              <h4 className="mb-2 text-lg font-semibold leading-tight">
+                Oops! That page can’t be found
+              </h4>
+              <p className="mb-8 text-lg">
+                The page you are looking for it maybe not available
+              </p>
+              <a
+                href="/"
+                className="btn inline-block rounded-lg px-8 py-3 text-center text-base font-semibold transition hover:bg-green-500 hover:text-white"
+              >
+                Go To Home
+              </a>
             </div>
           </div>
+
         </div>
       </section>
-    </>
+    </DashboardLayout>
   );
 };
 

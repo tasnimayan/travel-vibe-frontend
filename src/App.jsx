@@ -5,8 +5,6 @@ import Router from './utils/Router'
 import store from './redux/store/store'
 
 function App() {
-
-
   return (
     <Provider store = {store}>
       <Router />

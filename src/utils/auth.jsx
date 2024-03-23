@@ -1,21 +1,16 @@
-import { createContext, useState } from "react";
+import { useDispatch, useSelector} from "react-redux";
+import { userLogin } from "../redux/state/user/authSlice";
+import { Navigate, Outlet } from "react-router-dom";
 
-export const AuthContext = createContext(null)
+const auth = () => {
+  const dispatch = useDispatch()
+  const {user} = useSelector((state)=>state.auth)
 
-export const AuthProvider = ({ children })=>{
-  const [user, setUser] = useState({})
-
-  const login = (user) => {
-    setUser(user)
+  let handleLogin = ()=>{
+    dispatch(userLogin({user, token}))
   }
 
-  const logout = () => {
-    setUser(null)
-  }
+  return user? <Outlet /> : <Navigate to = '/login' replace/>
+};
 
-  return (
-    <AuthContext.Provider value={{user, login, logout}} >
-      {children}
-    </AuthContext.Provider>
-  )
-}
+export default auth;

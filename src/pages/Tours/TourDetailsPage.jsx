@@ -1,13 +1,14 @@
 import { NavLink, Outlet}from 'react-router-dom';
 import TourDateAside from './../../components/aside/TourDateAside';
 import ProfileAside from '../../components/aside/ProfileAside';
-import {FaRegUser, FaRegCalendar, FaRegHeart, FaShare} from 'react-icons/fa'
+import {FaRegUser, FaRegCalendar, FaRegHeart} from 'react-icons/fa'
 import { CiLocationOn, CiShare2 } from "react-icons/ci";
 import DashboardLayout from '../../layout/DashboardLayout';
 import TwoColLayout from '../../layout/TwoColLayout';
 import AsideLayout from '../../layout/AsideLayout';
 import MainColLayout from '../../layout/MainColLayout';
 import DetailImages from '../../components/tour/DetailImages';
+import Reviews from '../../components/tour/Reviews';
 
 const TourDetailsPage = () => {
   return (
@@ -15,11 +16,6 @@ const TourDetailsPage = () => {
         
         <TwoColLayout>
           {/* left column options */}
-          <AsideLayout>
-            <ProfileAside />
-            <TourDateAside />
-          </AsideLayout>
-
 
           <MainColLayout>
             <div className='bg-white rounded-lg'>
@@ -93,9 +89,18 @@ const TourDetailsPage = () => {
                 
                 {/* Outlet defines Where the Components of nested route will be rendered */}
               </div>
+
+              <Reviews />
             </div>
 
           </MainColLayout>
+
+          
+          <AsideLayout>
+            <ProfileAside />
+            <TourDateAside />
+          </AsideLayout>
+
         </TwoColLayout>
 
 

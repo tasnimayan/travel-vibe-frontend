@@ -13,8 +13,8 @@ const Nav = () => {
   const user =  {name:"Tasnim Ayan", photo:"https://sm.ign.com/t/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.300.jpg"}
 
   return (
-    <div className="top-nav w-full bg-white fixed z-50 shadow-lg">
-      <div className="p-4 text-gray-900 font-medium capitalize flex items-center justify-between">
+    <div className="top-nav w-full bg-white fixed z-50 shadow">
+      <div className="px-4 py-3 text-gray-900 font-medium capitalize flex items-center justify-between">
 
 {/* Hamburger Menu */}
   {/* <div className="group flex cursor-pointer items-center justify-center rounded-3xl bg-white p-2 md:hidden">
@@ -32,7 +32,7 @@ const Nav = () => {
           </h2>
         </a>
         
-        <div className=" space-y-1">
+        <div className="flex gap-x-2">
 
           <NavLink to="/"
             className={({isActive})=>{

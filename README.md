@@ -1,5 +1,8 @@
 # Travel Vibe - One-stop social platform for traveler built with React
 
+Travel Vibe, a MERN stack-based social platform for travelers in which users can find their desired travel plans or suggestions. Services that a user may get includes Travel Booking, Hotel Booking, Travel Guide Booking etc.
+
+The platform can also generate benefit to the Travel organizations, Hotel managers and Travel guides by advertizing their services and reach to appropriate clients.
 Features:
 
 - Built with React.js: Utilize the power of React for a dynamic and component-based development experience.

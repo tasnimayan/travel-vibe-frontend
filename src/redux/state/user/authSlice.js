@@ -17,7 +17,6 @@ export const authSlice = createSlice({
       state.token = null
     },
     currentUser: (state) =>{
-      debugger;
       return state.user
     }
   }

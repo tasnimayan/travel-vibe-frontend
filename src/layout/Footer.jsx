@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <div className="flex items-end w-full bg-white ">
+    <div className="flex items-end w-full bg-white">
     
         <footer className="w-full text-gray-700 bg-gray-100 body-font">
             <div className="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
@@ -49,16 +49,22 @@ const Footer = () => {
 
                 <div className="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
                     <div className="w-full px-4 lg:w-1/4 md:w-1/2">
-                        <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font">About</h2>
+                        <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font">Quick Link</h2>
                         <nav className="mb-10 list-none">
                             <li className="mt-3">
-                                <a className="text-gray-500 cursor-pointer hover:text-gray-900">Company</a>
+                                <a className="text-gray-500 cursor-pointer hover:text-gray-900">About Us</a>
                             </li>
                             <li className="mt-3">
-                                <a className="text-gray-500 cursor-pointer hover:text-gray-900">Careers</a>
+                                <a className="text-gray-500 cursor-pointer hover:text-gray-900">Destinations</a>
                             </li>
                             <li className="mt-3">
-                                <a className="text-gray-500 cursor-pointer hover:text-gray-900">Blog</a>
+                                <a className="text-gray-500 cursor-pointer hover:text-gray-900">Tour Package</a>
+                            </li>
+                            <li className="mt-3">
+                                <a className="text-gray-500 cursor-pointer hover:text-gray-900">Accommodation</a>
+                            </li>
+                            <li className="mt-3">
+                                <a className="text-gray-500 cursor-pointer hover:text-gray-900">Tour Guide</a>
                             </li>
                         </nav>
                     </div>

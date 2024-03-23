@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import {FaRegUser} from 'react-icons/fa'
-import { CiLocationOn } from "react-icons/ci";
 import AvatarBox from './../utility/AvatarBox';
+import { FaStar } from "react-icons/fa";
+
 
 
 
@@ -13,8 +14,10 @@ const TourCardSmall = () => {
     <div className="text-montserrat p-4 gap-6 bg-white rounded-xl shadow-lg border md:flex md:flex-row">
       {/* Image section */}
       <div className="w-full md:w-2/5 relative">
-        <img src={item.photos[0]} className="w-full h-full object-cover rounded-lg" />
-        <div className="absolute top-3 -left-4 text-white bg-black p-2 text-xs rounded-r-md line-clamp-1">3 days/ 4 nights</div>
+        <a href="#">
+          <img src={item.photos[0]} className="w-full h-full object-cover rounded-lg" />
+          <div className="absolute top-3 -left-4 text-white bg-black p-2 text-xs rounded-r-md line-clamp-1">3 days/ 4 nights</div>
+        </a>
       </div>
 
       {/* Description */}
@@ -28,15 +31,17 @@ const TourCardSmall = () => {
             {/* Tour Details  */}
             <div className="w-2/3">
               <h2 className="text-lg text-black font-[500] mb-2 line-clamp-2">{item.title} another thin is </h2>
-              <div className="flex pb-2 justify-between text-xs">
+              <div className="flex pb-2 text-xs text-gray-500">
                 <span>
-                  <FaRegUser className="inline-block mb-1"/>
+                  <FaRegUser className="inline-block mb-1 mr-2"/>
                   1 to 25 People</span>
 
-                <div>
-                {item.rating && 
-                  <span className="font-bold py-1 px-2 border rounded mr-2">{item.rating}</span>}
-                  <span>370 reviews</span> <br/>
+                <div className="ms-6">
+                {item.rating && <>
+                  <span className="font-bold mr-2">
+                    <FaStar className="inline-block mb-1 text-yellow-400 mr-1"/>{item.rating}</span>
+                    <span>(370 reviews)</span> </>}
+                  
                 </div>
               </div>
             </div>
@@ -49,8 +54,15 @@ const TourCardSmall = () => {
               </div>
 
             </div>
-
           </div>
+
+          <p className="uppercase text-xs text-black font-semibold line-clamp-1">
+            Dhaka &rarr; 
+            Chittagong &rarr; 
+            Chittagong &rarr; 
+            Chittagong &rarr; 
+            Cox's Bazar
+          </p>
           {/* Tour details */}
           <div className="pb-4">
             <p className="text-sm line-clamp-3">{item.desc}</p>

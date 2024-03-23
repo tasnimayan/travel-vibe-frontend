@@ -1,5 +1,14 @@
+import { useRef, useState} from "react";
 
 const AsideOptions = () => {
+  const [sliderValue, setSliderValue] = useState(0)
+  const rangeValue = useRef()
+
+  let onValueChange = (e) =>{
+    setSliderValue(e.target.value)
+    rangeValue.current.style.left = sliderValue / 20000 + "px"
+  }
+
   return (
       <div className=" bg-white shadow-md rounded-2xl p-4 w-full">
         <h4 className='text-xl w-full'>Filter By</h4>
@@ -17,42 +26,92 @@ const AsideOptions = () => {
               </div>
             </div>
           </li>
+          {/* Price Range Input */}
           <li className='rounded m-2 px-4 py-1 text-slate-600 shadow-sm shadow-neutral-300'>
             <label>Price Range</label> 
-            <input type="range" min={100} max={100000} step={100}/>
-            show values
+            
+            <div className="text-sm relative">
+              <span ref={rangeValue} className="absolute left-0 text-center font-bold p-2">{sliderValue < 1000 ? sliderValue : sliderValue/1000 + "K"}</span>
+              <input type="range" className="mt-10 rs-range" min={0} max={20000} step={500} value={sliderValue} onChange={onValueChange}/>
+            </div>
+
+            <div className=" mt-2 text-xs flex justify-between">
+              <span>0</span>
+              <span>20K</span>
+            </div>
+
           </li>
+
+
+          <li className='rounded m-2 px-4 py-1 text-slate-600 shadow-sm shadow-neutral-300'>
+            <label>Destinations</label> 
+              <ul className="h-48 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
+                <li>
+                  <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input name="destination" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded" />
+                    <label htmlFor="checkbox-item-11" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Sylhet</label>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                      <input name="destination" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                      <label htmlFor="checkbox-item-12" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Cox's Bazar</label>
+                    </div>
+                </li>
+                <li>
+                  <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input name="destination" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                    <label htmlFor="checkbox-item-13" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Bandorban</label>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input name="destination" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                    <label htmlFor="checkbox-item-14" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Rangamati</label>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input name="destination" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                    <label htmlFor="checkbox-item-15" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Sundarban</label>
+                  </div>
+                </li>
+
+              </ul>
+
+          </li>
+
           <li className='rounded m-2 px-4 py-1 text-slate-600 shadow-sm shadow-neutral-300'>
             <label>Duration</label> 
               <ul className="h-48 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
                 <li>
                   <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input id="checkbox-item-11" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                    <label htmlFor="checkbox-item-11" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Bonnie Green</label>
+                    <input name="duration" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded" />
+                    <label htmlFor="checkbox-item-11" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">1 - 2 Days Tour</label>
                   </div>
                 </li>
                 <li>
                   <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                      <input id="checkbox-item-12" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                      <label htmlFor="checkbox-item-12" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Jese Leos</label>
+                      <input name="duration" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                      <label htmlFor="checkbox-item-12" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">2 - 3 Days Tour</label>
                     </div>
                 </li>
                 <li>
                   <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input id="checkbox-item-13" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                    <label htmlFor="checkbox-item-13" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Michael Gough</label>
+                    <input name="duration" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                    <label htmlFor="checkbox-item-13" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">3 - 4 Days Tour</label>
                   </div>
                 </li>
                 <li>
                   <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input id="checkbox-item-14" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                    <label htmlFor="checkbox-item-14" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Robert Wall</label>
+                    <input name="duration" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                    <label htmlFor="checkbox-item-14" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">4 - 5 Days Tour</label>
                   </div>
                 </li>
                 <li>
                   <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input id="checkbox-item-15" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                    <label htmlFor="checkbox-item-15" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Joseph Mcfall</label>
+                    <input name="duration" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                    <label htmlFor="checkbox-item-15" className="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">5 - 6 Days Tour</label>
                   </div>
                 </li>
 
