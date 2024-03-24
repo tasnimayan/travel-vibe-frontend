@@ -166,9 +166,7 @@ i {
   justify-content: space-between;
   width: 60%;
   padding: 0.25rem 1em;
-  font-size: 20px;
   margin-bottom: 4em;
-  color: #fff;
   overflow: hidden;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
