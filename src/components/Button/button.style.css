@@ -1,0 +1,38 @@
+.sm {
+  width: 150px;
+}
+.lg {
+  width: 200px;
+}
+.xl {
+  width: 250px;
+}
+
+.button {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: black;
+  border: 1px solid orange;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0.35rem;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
+}
+
+.button.primary {
+  background-color: white;
+}
+.button.primary:hover {
+  background-color: orange;
+  color: white;
+}
+.button.secondary {
+  background-color: orange;
+  color: white;
+}
+.button.secondary:hover {
+  background-color: white;
+  color: black;
+}

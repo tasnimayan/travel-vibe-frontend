@@ -1,12 +1,10 @@
 
 // This is the home page for the hotels
-
 import HotelCard from '../../components/tour/HotelCard';
-import DashboardLayout from '../../layout/DashboardLayout';
 
 const HotelsHomePage = () => {
   return (
-    <DashboardLayout>
+    <>
       <div className='px-16'>
         {/* Top Heading with navigation */}
         <div className="flex flex-col mb-8 relative">
@@ -67,7 +65,7 @@ const HotelsHomePage = () => {
       </div>
 
 
-    </DashboardLayout>
+    </>
   );
 };
 

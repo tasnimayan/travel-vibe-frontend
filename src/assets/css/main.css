@@ -96,22 +96,22 @@ i {
 }
 
 /* Range Slider style*/
+.rs-range:focus {
+  outline: none;
+}
+.rs-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  box-shadow: none;
+  background: #034e00;
+  border-radius: 3px;
+  border: 0px solid #010101;
+}
 .rs-range {
   width: 100%;
   margin-top: 10px;
   -webkit-appearance: none;
-  &:focus {
-    outline: none;
-  }
-  &::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 8px;
-    cursor: pointer;
-    box-shadow: none;
-    background: #034e00;
-    border-radius: 3px;
-    border: 0px solid #010101;
-  }
   /* &::-moz-range-track {
     width: 100%;
     height: 5px;
@@ -121,34 +121,33 @@ i {
     border-radius: 0px;
     border: 0px solid #010101;
   } */
-
-  &::-webkit-slider-thumb {
-    box-shadow: none;
-    border: 0px solid #ffffff;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
-    height: 32px;
-    width: 10px;
-    border-radius: 10px;
-    background: rgb(10, 134, 51);
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -10px;
-  }
-  &::-moz-range-thumb {
-    box-shadow: none;
-    border: 0px solid #ffffff;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-    height: 42px;
-    width: 22px;
-    border-radius: 22px;
-    background: rgba(255, 255, 255, 1);
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -20px;
-  }
-  &::-moz-focus-outer {
-    border: 0;
-  }
+}
+.rs-range::-webkit-slider-thumb {
+  box-shadow: none;
+  border: 0px solid #ffffff;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+  height: 32px;
+  width: 10px;
+  border-radius: 10px;
+  background: rgb(10, 134, 51);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+.rs-range::-moz-range-thumb {
+  box-shadow: none;
+  border: 0px solid #ffffff;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  height: 42px;
+  width: 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -20px;
+}
+.rs-range::-moz-focus-outer {
+  border: 0;
 }
 
 .header {
@@ -167,7 +166,7 @@ i {
   width: 60%;
   padding: 0.25rem 1em;
   margin-bottom: 4em;
-  overflow: hidden;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
+  z-index: 10;
 }

@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useRoutes } from 'react-router-dom'
 import ErrorPage from '../pages/ErrorPage'
 import TourDetailsPage from '../pages/Tours/TourDetailsPage'
 import Overview from '../components/tour/Overview'
@@ -19,16 +19,20 @@ import GuidesPage from '../pages/Guides/GuidesPage'
 import HotelsHomePage from '../pages/Hotels/HotelsHomePage'
 import FeedPage from '../pages/Community/FeedPage'
 import HomePage from './../pages/HomePage';
+import AllTours from '../pages/Tours/AllTours'
+import SearchedTour from '../pages/Tours/SearchedTour'
+import DashboardLayout from '../layout/DashboardLayout'
 
 
 const Router = () => {
   return (
     <Routes>
 {/* ======== General Routes that is accessible to all non-account users ======== */}
-        <Route path="/" element={<HomePage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path='/signup' element={<SignUpPage />} />
         <Route path='/tours' element={<TourHomePage/>} />
+        <Route path='/search/tours' element={<SearchedTour/>} />
         
         <Route path='/tours/new' element={<CreateTourPage/>} />
 

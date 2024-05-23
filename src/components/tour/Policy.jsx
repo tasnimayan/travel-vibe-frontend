@@ -1,14 +1,15 @@
+import { useSelector } from "react-redux";
 
 const Policy = () => {
+    const {tourDetails} = useSelector(state => state.tour)
   return (
     <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4 text-gray-900">Policy</h1>
 
-        <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-            This privacy policy sets out how our website uses and protects any information that you give us when you use
-            this
-            website.
-        </p>
+        <div className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+            {tourDetails.policy}
+        </div>
+
 
         <h2 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Cancellation</h2>
 

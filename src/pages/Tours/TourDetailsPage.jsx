@@ -1,4 +1,4 @@
-import { NavLink, Outlet}from 'react-router-dom';
+import { NavLink, Outlet, useParams}from 'react-router-dom';
 import TourDateAside from './../../components/aside/TourDateAside';
 import ProfileAside from '../../components/aside/ProfileAside';
 import {FaRegUser, FaRegCalendar, FaRegHeart} from 'react-icons/fa'
@@ -9,14 +9,31 @@ import AsideLayout from '../../layout/AsideLayout';
 import MainColLayout from '../../layout/MainColLayout';
 import DetailImages from '../../components/tour/DetailImages';
 import Reviews from '../../components/tour/Reviews';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTourDetails } from './../../redux/state/tour/tourSlice';
+import { useEffect } from 'react';
+import TourDetailsSkeleton from '../../components/skeletons/TourDetailsSkeleton';
 
 const TourDetailsPage = () => {
+  const param = useParams()
+  const dispatch = useDispatch()
+  const {tourDetails, loading, error} = useSelector(state => state.tour)
+
+  useEffect(()=>{
+    dispatch(fetchTourDetails(param.tourId))
+
+  }, [dispatch])
+  if(loading){
+    return <TourDetailsSkeleton />
+  }
+  if(!tourDetails){
+    return <>No data found</>
+  }
   return (
-    <DashboardLayout>
+    <>
         
         <TwoColLayout>
           {/* left column options */}
-
           <MainColLayout>
             <div className='bg-white rounded-lg'>
               <div className='py-2 pr-2'>
@@ -26,28 +43,28 @@ const TourDetailsPage = () => {
                   <div className="flex flex-row gap-2 text-start p-8">
                     {/* Tour Details  */}
                     <div className="text-sm w-2/3">
-                      <h2 className="text-xl text-gray-700 font-semibold mb-2 leading-6">Rangamati, Sajek 3 nights 2 days tour</h2>
+                      <h2 className="text-xl text-gray-700 font-semibold mb-2 leading-6">{tourDetails.title}</h2>
                       <div className="flex pb-2">
                         <FaRegCalendar/>
-                        <span>3 days</span>
+                        <span>{tourDetails.duration}</span>
                         <FaRegUser />
-                        <span>5 to 30 People</span>
+                        <span>{tourDetails.personCapacity} person</span>
 
                       </div>
                       <div className="flex pb-2">
                         <CiLocationOn />
-                        <span>Sayedabad Bus Terminal</span>
+                        <span>{tourDetails.startLocation}</span>
                       </div>
         
-                      <span className="font-bold py-1 px-2 border rounded">4.5</span>
-                      <span>370 reviews</span> <br/>
+                      <span className="font-bold py-1 px-2 border rounded">{tourDetails.ratingsAverage}</span>
+                      <span>{tourDetails.ratingsQuantity} reviews</span> <br/>
 
                     </div>
                     {/* Price section */}
                     <div className="flex flex-col w-1/3">
                       <div className="text-right text-montserrat leading-4">
                         <span className="text-sm text-gray-400">starting from</span>
-                        <p className="text-2xl font-bold text-green-500">BDT 4999</p>
+                        <p className="text-2xl font-bold text-green-500">BDT {tourDetails.price}</p>
                         <span className="text-sm text-gray-400">per person</span>
                       </div>
                       <div className='flex justify-end mt-4'>
@@ -61,7 +78,7 @@ const TourDetailsPage = () => {
                   </div>
 
                   {/* Images Section */}
-                  <DetailImages />
+                  <DetailImages images={tourDetails.images}/>
                 </div>
               </div>
 
@@ -90,22 +107,22 @@ const TourDetailsPage = () => {
                 {/* Outlet defines Where the Components of nested route will be rendered */}
               </div>
 
-              <Reviews />
+              <Reviews tourId={param.tourId}/>
             </div>
 
           </MainColLayout>
 
           
           <AsideLayout>
-            <ProfileAside />
-            <TourDateAside />
+            <ProfileAside profile={tourDetails?.orgId}/>
+            <TourDateAside data={tourDetails}/>
           </AsideLayout>
 
         </TwoColLayout>
 
 
 
-    </DashboardLayout>      
+    </>      
   );
 };
 

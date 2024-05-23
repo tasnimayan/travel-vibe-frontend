@@ -1,14 +1,17 @@
 
-const ProfileAside = () => {
+const ProfileAside = ({profile}) => {
+    if(!profile){
+        return <>No profile found</>
+    }
   return (
     <div className="w-full max-w-sm bg-white rounded-2xl shadow overflow-hidden">
         <div className="flex flex-col items-center w-full mx-auto p-4">
             <div className="flex h-32 w-full justify-center rounded-xl" >
-                <img src='https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/media/banner.ef572d78f29b0fee0a09.png' className="flex h-32 w-full justify-center rounded-xl bg-cover" /> 
+                <img src={profile.photo} className="flex h-32 w-full justify-center rounded-xl bg-cover" /> 
             </div> 
             <div className="mt-4 flex flex-col items-center">
                 <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-                    Travelsome Ltd.
+                    {profile.name}
                 </h4>
                 <p className="text-sm font-normal text-gray-600">Agency</p>
             </div>

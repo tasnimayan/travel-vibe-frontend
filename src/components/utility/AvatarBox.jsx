@@ -11,7 +11,7 @@ const AvatarBox = ({details}) => {
         <div className="w-10 h-10">
           <img
             alt="avatar"
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+            src={details.img ?? 'default.jpg'}
             className="rounded-full w-full h-full object-cover"
           />
         </div>

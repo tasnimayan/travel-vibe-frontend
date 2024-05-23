@@ -64,7 +64,7 @@ const GuidesPage = () => {
   ]
   
   return (
-    <DashboardLayout>
+    <>
 
 {/* Search Items */}
       <div className="max-w-2xl mt-[8rem] mx-auto">
@@ -100,7 +100,7 @@ const GuidesPage = () => {
       </div>
 
 
-    </DashboardLayout>
+    </>
   );
 };
 

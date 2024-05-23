@@ -1,3 +1,6 @@
+
+
+
 # Category slider is not sliding .
 # Profile Option show on avatar click 
 # 
@@ -7,3 +10,15 @@
 #
 #
 #
+
+
+On trending search click _ tour is not loading
+
+
+
+
+
+
+==== Things that are completed ====
+Login page functionality Working
+Tour page Working

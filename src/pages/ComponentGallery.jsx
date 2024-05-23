@@ -11,7 +11,7 @@ import TourCardMini from "../components/tour/TourCardMini";
 
 const ComponentGallery = () => {
   return (
-  <DashboardLayout>
+  <>
 
 <div className="p-12 grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12">
     <TourCardMini />
@@ -65,7 +65,7 @@ const ComponentGallery = () => {
       
   </div>
 
-  </DashboardLayout>
+  </>
   );
 };
 

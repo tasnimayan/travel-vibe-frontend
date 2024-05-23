@@ -17,7 +17,7 @@ import OfferImages from '../components/home/OfferImages';
 
 const HomePage = () => {
   return (
-    <DashboardLayout>
+    <>
       <div>
         {/* Hero Image with search bar */}
         <Header />
@@ -104,7 +104,7 @@ const HomePage = () => {
 
 
 
-    </DashboardLayout>
+    </>
   );
 };
 

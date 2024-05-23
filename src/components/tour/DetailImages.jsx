@@ -1,7 +1,7 @@
 // This component is responsible for the image gallery inside of Tour Details page
 // takes a single prop 'images:[str]'
 
-const DetailImages = (props) => {
+const DetailImages = ({images}) => {
   return (
     <div className="px-3">
       <div>
