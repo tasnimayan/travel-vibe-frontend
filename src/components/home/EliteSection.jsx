@@ -10,7 +10,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const EliteSection = () => {
 
   return (
-    <div className="container-pad">
+    <div className="container mx-auto container-pad">
       <div>
         <SectionHeading 
           title = "Tourist Attraction Worldwide"

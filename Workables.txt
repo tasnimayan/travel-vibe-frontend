@@ -22,3 +22,6 @@ On trending search click _ tour is not loading
 ==== Things that are completed ====
 Login page functionality Working
 Tour page Working
+
+
+On nearby tour card click it redirects but does not load correct data  => solve: alltour page data fetch insted tourhome

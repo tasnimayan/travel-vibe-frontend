@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPopularLocations } from "../../redux/state/tour/popularLocationSlice";
+import { fetchPopularLocations } from "../../redux/state/tour/locationSlice";
 import LocationsSkeleton from "../skeletons/LocationsSkeleton";
 import { fetchSearchedTours } from "../../redux/state/tour/tourSlice";
 import { useSearchParams } from "react-router-dom";

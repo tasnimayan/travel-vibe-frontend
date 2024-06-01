@@ -4,14 +4,23 @@ import axios from 'axios';
 export const fetchPopularLocations = createAsyncThunk(
   'tour/fetchPopularLocations',
   async () => {
-      let  URL = 'http://localhost:8000/api/v1/tours/top-location'
-      const response = await axios.get(URL);
-      return response.data.data;
+    let  URL = 'http://localhost:8000/api/v1/tours/top-location'
+    const response = await axios.get(URL);
+    return response.data.data;
+  }
+);
+export const fetchNearbyLocations = createAsyncThunk(
+  'tour/fetchNearbyLocations',
+  async ({country,location}) => {
+    let  URL = `http://localhost:8000/api/v1/tours/nearby-location?country=${country}&location=${location}`
+    const response = await axios.get(URL);
+    return response.data.data;
   }
 );
 
 const initialState = {
   popularLocations: [],
+  nearbyLocations:[],
   loading: false,
   error: null,
 };
@@ -32,6 +41,17 @@ const popularLocationSlice = createSlice({
         state.popularLocations = action.payload;
       })
       .addCase(fetchPopularLocations.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(fetchNearbyLocations.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchNearbyLocations.fulfilled, (state, action) => {
+        state.loading = false;
+        state.nearbyLocations = action.payload;
+      })
+      .addCase(fetchNearbyLocations.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

@@ -2,7 +2,7 @@ import { TbTargetArrow, TbUserStar  } from "react-icons/tb";
 
 const About = () => {
   return (
-    <div className="container-pad">
+    <div className="container mx-auto container-pad">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Left column */}
         <div className="pr-8">

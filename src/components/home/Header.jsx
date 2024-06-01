@@ -15,7 +15,7 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     setSearch({ type: "NEW_SEARCH", payload: { destination, dates } });
-    navigate("/hotels", { state: { destination, dates } });
+    navigate("/tours", { state: { destination, dates } });
   };
 
 

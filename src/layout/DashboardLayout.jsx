@@ -6,7 +6,7 @@ function DashboardLayout(props) {
   return (
     <>
       <Nav />
-      <div className=" mt-[70px] container mx-auto">
+      <div className=" mt-[70px] mx-auto">
         {props.children}
       </div>
       <Footer />

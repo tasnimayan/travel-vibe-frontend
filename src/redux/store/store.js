@@ -2,8 +2,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from '../state/user/authSlice';
 import tourReducer from '../state/tour/tourSlice';
 import categoryReducer from "../state/tour/categorySlice";
-import locationReducer from "../state/tour/popularLocationSlice";
+import locationReducer from "../state/tour/locationSlice";
 import reviewReducer from '../state/tour/reviewSlice'
+import utilityReducer from '../state/tour/utilitySlice'
 
 
 const store = configureStore({
@@ -13,6 +14,7 @@ const store = configureStore({
     category: categoryReducer,
     location: locationReducer,
     review: reviewReducer,
+    utility: utilityReducer,
   }
 })
 

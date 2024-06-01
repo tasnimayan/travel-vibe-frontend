@@ -1,16 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-const BASE_URL = "http://localhost:8000/api/v1"
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 export const fetchTours = createAsyncThunk(
   'tours/fetchTourList',
   async (page) => {
     let URL
     if(!page){
-      URL = `${BASE_URL}/tours`
+      URL = `${BASE_URL}/api/v1/tours`
     }
     else{
-      URL = `${BASE_URL}/tours?page=${page}`
+      URL = `${BASE_URL}/api/v1/tours?page=${page}`
     }
     const response = await axios.get(URL);
     return response.data;
@@ -23,7 +23,7 @@ export const fetchSearchedTours = createAsyncThunk(
   async (options) => {
     const {location='', country='Bangladesh', startDate=''} = options
     // Search Tour API fetch
-    let URL = `${BASE_URL}/tours/search?location=${location}&country=${country}&startDate=${startDate}`
+    let URL = `${BASE_URL}/api/v1/tours/search?location=${location}&country=${country}&startDate=${startDate}`
     const response = await axios.get(URL);
     return response.data;
   }
@@ -33,7 +33,17 @@ export const fetchTourDetails = createAsyncThunk(
   'tours/fetchTourDetails',
   async (tourId) => {
     // Get Tour Details
-    let URL = `${BASE_URL}/tours/tour/${tourId}`
+    let URL = `${BASE_URL}/api/v1/tours/tour/${tourId}`
+    const response = await axios.get(URL);
+    return response.data;
+  }
+);
+
+export const fetchDiscountedTours = createAsyncThunk(
+  'tours/fetchDiscountedTours',
+  async () => {
+    // Get Tour Details
+    let URL = `${BASE_URL}/api/v1/tours/discount`
     const response = await axios.get(URL);
     return response.data;
   }
@@ -42,6 +52,7 @@ export const fetchTourDetails = createAsyncThunk(
 const initialState = {
   tourList: [],
   totalPages:0,
+  discountedTours:[],
   tourDetails:null,
   loading: false,
   error: null,
@@ -91,6 +102,17 @@ const tourSlice = createSlice({
         state.tourDetails = action.payload.data;
       })
       .addCase(fetchTourDetails.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(fetchDiscountedTours.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchDiscountedTours.fulfilled, (state, action) => {
+        state.loading = false;
+        state.discountedTours = action.payload.data;
+      })
+      .addCase(fetchDiscountedTours.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       })

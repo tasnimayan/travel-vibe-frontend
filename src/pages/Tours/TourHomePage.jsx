@@ -11,12 +11,11 @@ import TwoColLayout from '../../layout/TwoColLayout';
 import MainColLayout from '../../layout/MainColLayout';
 import Categories from '../../components/tour/Categories';
 
-import DateRange from '../../components/utility/DateRange';
 import TourSearchBar from '../../components/tour/TourSearchBar';
 import Button from '../../components/Button';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { fetchTours } from '../../redux/state/tour/tourSlice';
+import { fetchTours } from '../../redux/state/tour/tourSlice';                                                
 
 
 const TourHomePage = () => {
