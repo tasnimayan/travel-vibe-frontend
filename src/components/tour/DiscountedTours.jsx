@@ -16,7 +16,7 @@ const DiscountedTours = () => {
   return (
     <div className="container-pad">
       <SectionHeading
-        title = "Get special discount"
+        title = "Get Special Discount"
         align = "center"
         />
       <div className="flex gap-8 p-8">

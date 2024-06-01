@@ -16,6 +16,8 @@ import Button from '../../components/Button';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchTours } from '../../redux/state/tour/tourSlice';                                                
+import SectionHeading from '../../components/tour/SectionHeading';
+import DiscountedTours from '../../components/tour/DiscountedTours';
 
 
 const TourHomePage = () => {
@@ -35,24 +37,18 @@ const TourHomePage = () => {
           <TourSearchBar />
         </div>
 
-        <section className='grid grid-cols-1 gap-4 my-12'>
-          <div className="">
-            <h1 className='text-4xl font-semibold'>Top <span className="text-pink-400">Destinations</span> In The World</h1>
-            <p>It is a long established fact that a reader will be the distracted by the readable content of a page when looking at its layout from it.</p>
-          </div>
-          <div className="col-span-2">
-
-          <TrendingList />
-          </div>
-            <Button type="primary" as="a" href="/search/tours/">Discover More</Button>
-        </section>
-
       </div>
 
       {/* Popular destination Categories */}
-      <div className='p-6'>
+      <section className='p-6'>
+        <SectionHeading
+          title="Top Destinations In The World"
+          subtitle="Discover top destinations"
+          align="left"
+          className='px-4 md:px-20'
+          />
         <PopularDestinations />
-      </div>
+      </section>
 
 
       <div className='sm:px-3 md:px-6 lg:px-[4rem]'>

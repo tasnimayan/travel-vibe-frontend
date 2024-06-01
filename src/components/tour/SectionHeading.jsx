@@ -3,7 +3,7 @@
 
 const SectionHeading = (props) => {
   return (
-    <div className={`flex flex-col relative text-${props.align?? 'left'}`}>
+    <div className={`flex flex-col relative text-${props.align?? 'left'} ${props.className}`}>
       <div className="relative mb-4 text-neutral-900">
         <div className="w-full">
           <h2 className="text-2xl md:text-3xl font-semibold">{props.title?? ''}</h2>
