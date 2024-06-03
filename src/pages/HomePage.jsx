@@ -8,7 +8,6 @@ import OfferImages from '../components/home/OfferImages';
 
 
 import SectionHeading from '../components/tour/SectionHeading';
-import EliteSection from '../components/home/EliteSection';
 import ChooseWhy from '../components/home/ChooseWhy';
 import DiscountedTours from '../components/tour/DiscountedTours';
 
@@ -43,9 +42,6 @@ const HomePage = () => {
 
       <OfferImages />
 
-      <EliteSection />
-
-
       <div className="container mx-auto bg-gray-600 text-white py-20 bg-[url('https://images.unsplash.com/photo-1501908734255-16579c18c25f?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-center bg-blend-overlay rounded-xl">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row items-center">
@@ -63,13 +59,7 @@ const HomePage = () => {
 
 
       <DiscountedTours />
-
-      <div>
-        <ChooseWhy />
-      </div>
-
-
-
+      <ChooseWhy />
     </>
   );
 };

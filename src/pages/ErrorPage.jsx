@@ -1,8 +1,5 @@
-import DashboardLayout from "../layout/DashboardLayout";
-
 const ErrorPage = () => {
   return (
-    <DashboardLayout>
       <section className="relative  h-[32rem] flex justify-center items-center">
         <div className="container">
           <div className="w-full px-4">
@@ -28,7 +25,6 @@ const ErrorPage = () => {
 
         </div>
       </section>
-    </DashboardLayout>
   );
 };
 

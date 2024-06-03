@@ -25,4 +25,4 @@ dist-ssr
 .eslintrc.cjs
 .env
 
-Workables.txt
+/Workables.txt

@@ -6,7 +6,7 @@ import { GiWorld } from "react-icons/gi";
 
 const ChooseWhy = () => {
   return (
-    <div className="container-pad">
+    <section className="container mx-auto container-pad">
       <SectionHeading
         title = "Why Choose Travel Vibe"
         align = "center"
@@ -117,7 +117,7 @@ const ChooseWhy = () => {
 
       </div>
       
-    </div>
+    </section>
   );
 };
 

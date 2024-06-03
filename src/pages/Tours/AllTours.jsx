@@ -1,16 +1,34 @@
+// This component is responsible for fetching tours according to the url and show tour list
 
 import Pagination from '../../components/mini/Pagination';
 import TourCardSmall from './../../components/tour/TourCardSmall';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import PostSkeleton from '../../components/skeletons/PostSkeleton';
-import NoTour from './NoTour';
-import { useSearchParams } from 'react-router-dom';
-const AllTours = () => {
-  const [query, setQuery] = useSearchParams()
+import NoTour from '../../components/tour/NoTour';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { fetchSearchedTours, fetchTours } from '../../redux/state/tour/tourSlice';
 
-  const {tourList, totalPages, loading, error} = useSelector((state) => state.tour)
+const AllTours = () => {
+  const path = useLocation()
+  const dispatch = useDispatch();
+  const [query, setQuery] = useSearchParams()
   let page = query.get('page') || 1
+  let location = query.get('location') || ''
+  let startDate = query.get('startDate') || ''
+
+  useEffect(()=>{
+    if(query.size === 0){
+      dispatch(fetchTours(page));
+    }
+    else {
+      dispatch(fetchSearchedTours({location:location, startDate:startDate,page:page}))
+    }
+  }, [dispatch])
+
+
+  const {tourList, totalPages, loading} = useSelector((state) => state.tour)
 
 
   if(loading){
@@ -33,7 +51,7 @@ const AllTours = () => {
       {/* Pagination */}
       {
         totalPages>1 ? (<Pagination 
-        url = {location.pathname}
+        url = {path.pathname}
         totalPages = {totalPages}
         currentPage = {query.get('page') || 1} />) : null
       }

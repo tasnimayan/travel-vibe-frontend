@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import TrendingList from '../../components/categoryList/TrendingList';
+import React from 'react'
 
 const LazyTours = React.lazy(()=>import('./AllTours'))
 import PostSkeleton from '../../components/skeletons/PostSkeleton';
@@ -11,25 +10,11 @@ import TwoColLayout from '../../layout/TwoColLayout';
 import MainColLayout from '../../layout/MainColLayout';
 import Categories from '../../components/tour/Categories';
 
-import TourSearchBar from '../../components/tour/TourSearchBar';
-import Button from '../../components/Button';
-import { useSearchParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { fetchTours } from '../../redux/state/tour/tourSlice';                                                
+import TourSearchBar from '../../components/tour/TourSearchBar';                                            
 import SectionHeading from '../../components/tour/SectionHeading';
-import DiscountedTours from '../../components/tour/DiscountedTours';
 
 
 const TourHomePage = () => {
-
-  const [query] = useSearchParams()
-  let page = query.get('page') || 1
-  const dispatch = useDispatch();
-
-  useEffect(()=>{
-    dispatch(fetchTours(page));
-  }, [dispatch])
-
   return (
     <>
       <div>

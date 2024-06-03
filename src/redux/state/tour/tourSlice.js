@@ -21,9 +21,9 @@ export const fetchTours = createAsyncThunk(
 export const fetchSearchedTours = createAsyncThunk(
   'tours/fetchSearchedTours',
   async (options) => {
-    const {location='', country='Bangladesh', startDate=''} = options
+    const {location='', country='Bangladesh', startDate='', page=1} = options
     // Search Tour API fetch
-    let URL = `${BASE_URL}/api/v1/tours/search?location=${location}&country=${country}&startDate=${startDate}`
+    let URL = `${BASE_URL}/api/v1/tours/search?location=${location}&country=${country}&startDate=${startDate}&page=${page}`
     const response = await axios.get(URL);
     return response.data;
   }

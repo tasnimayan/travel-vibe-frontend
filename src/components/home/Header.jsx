@@ -6,16 +6,15 @@ import { useNavigate } from "react-router-dom";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
-const Header = ({ type }) => {
+const Header = () => {
   const [destination, setDestination] = useState("");
-  const [dates, setDates] = useState(new Date());
+  const [date, setDate] = useState(new Date().toDateString());
 
   const navigate = useNavigate();
-  const [search, setSearch] = useState();
 
   const handleSearch = () => {
-    setSearch({ type: "NEW_SEARCH", payload: { destination, dates } });
-    navigate("/tours", { state: { destination, dates } });
+    let url = `/tours?${destination?'location='+destination : ''}${date?'&startDate='+date : ''}` 
+    navigate(url);
   };
 
 
@@ -23,7 +22,7 @@ const Header = ({ type }) => {
 
   return (
     <div className="header flex justify-center relative text-white bg-no-repeat bg-bottom bg-cover bg-blend-multiply"> 
-      <div className="flex flex-col items-center w-full m-auto" >
+      <div className="container flex flex-col items-center w-full m-auto" >
           <h1 className="px-2 text-3xl font-bold text-center mb-10 w-full md:w-1/2 md:text-5xl">
             A lifetime of discounts? It&apos;s Genius.
           </h1>

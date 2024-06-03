@@ -1,10 +1,16 @@
 
 // This is the home page for the hotels
+import EliteSection from '../../components/home/EliteSection';
 import HotelCard from '../../components/tour/HotelCard';
+import ScrollLoader from './../../components/utility/ScrollLoader';
 
 const HotelsHomePage = () => {
   return (
-    <>
+    <div className='relative'>
+      {/* Loader */}
+      <ScrollLoader />
+
+
       <div className='px-16'>
         {/* Top Heading with navigation */}
         <div className="flex flex-col mb-8 relative">
@@ -54,18 +60,8 @@ const HotelsHomePage = () => {
         </div>
       </div>
 
-
-      {/* Show more Button */}
-      <div className="bg-gray-300 flex mt-16 justify-center items-center">
-        <button disabled="" className="relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6 disabled:bg-opacity-70 bg-primary-6000 hover:bg-primary-700 text-neutral-50  ">
-          <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>Show me more </button>
-      </div>
-
-
-    </>
+      <EliteSection />
+    </div>
   );
 };
 

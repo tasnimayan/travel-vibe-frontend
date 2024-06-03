@@ -14,7 +14,7 @@ const DiscountedTours = () => {
   },[dispatch])
 
   return (
-    <div className="container-pad">
+    <section className="container mx-auto container-pad">
       <SectionHeading
         title = "Get Special Discount"
         align = "center"
@@ -24,7 +24,7 @@ const DiscountedTours = () => {
           discountedTours.map((item, idx)=><SliderCard tour={item} key={idx}/>)
         }
       </div>
-    </div>
+    </section>
   );
 };
 

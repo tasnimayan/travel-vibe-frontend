@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FaSearch } from 'react-icons/fa';
@@ -7,14 +7,12 @@ import { useDispatch } from "react-redux";
 import { fetchSearchedTours } from "../../redux/state/tour/tourSlice";
 
 const TourSearchBar = () => {
-  const [location, setLocation] = React.useState('');
-  const [startDate, setStartDate] = React.useState(null);
+  const [location, setLocation] = useState('');
+  const [startDate, setStartDate] = useState(null);
 
   const dispatch = useDispatch()
 
   const handleSearch = () => {
-    // console.log('Searching for tours in', location, 'starting from', startDate);
-
     dispatch(fetchSearchedTours({location:location, startDate:startDate}))
   };
 

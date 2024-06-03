@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import {fetchUser} from "../../redux/state/user/authSlice"
+import {fetchUserLogin} from "../../redux/state/user/authSlice"
 import FullPageLoader from './../../components/utility/FullPageLoader';
 
 import { toast } from "react-toastify";
@@ -29,7 +29,7 @@ const LoginPage = () => {
       return toast.error("Please Enter Valid Details")
     }
     try{
-      await dispatch(fetchUser(loginData)).unwrap()
+      await dispatch(fetchUserLogin(loginData)).unwrap()
       setLoginData({email:'', password:''})
       navigate(location.state?.path || '/')
     }

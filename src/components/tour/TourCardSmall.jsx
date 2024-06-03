@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {FaRegUser} from 'react-icons/fa'
 import AvatarBox from './../utility/AvatarBox';
 import { FaStar } from "react-icons/fa";
+import { FaCalendar, FaStopwatch } from "react-icons/fa6";
 
 
 const TourCardSmall = ({tour}) => {
@@ -10,6 +11,22 @@ const TourCardSmall = ({tour}) => {
   const date = new Date()
   const createdAt = new Date(tour.createdAt?? '2024-03-20')
   let posted = Math.floor((date - createdAt)/DAY_IN_MILISECOND)
+
+  const getDate = (userDate)=>{
+    let created_date = new Date(userDate)
+    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let year = created_date.getFullYear();
+    let month = months[created_date.getMonth()];
+    let date = created_date.getDate();
+    let hour = created_date.getHours();
+    let min = created_date.getMinutes();
+
+    let fullDate = date + ',' + month + ' ' + year
+    let time = hour + ':' + min ;
+    return [fullDate, time];
+  }
+
+
 
   return (
     <div className="text-montserrat p-4 gap-6 bg-white rounded-xl shadow-lg border md:flex md:flex-row">
@@ -45,6 +62,16 @@ const TourCardSmall = ({tour}) => {
                   
                 </div>
               </div>
+              <div className="flex pb-2 text-xs text-gray-500">
+                <span>
+                  <FaCalendar className="inline-block mb-1 mr-2"/>
+                  {getDate(tour.startDate)[0]}</span>
+
+                <div className="ms-6">
+                  <FaStopwatch className="inline-block mb-1 mr-2" />
+                {getDate(tour.startTime)[1]}
+                </div>
+              </div>
             </div>
             {/* Price section */}
             <div className="flex flex-col w-1/3">
@@ -57,13 +84,13 @@ const TourCardSmall = ({tour}) => {
             </div>
           </div>
 
-          <p className="uppercase text-xs text-black font-semibold line-clamp-1">
+          {/* <p className="uppercase text-xs text-black font-semibold line-clamp-1">
             Dhaka &rarr; 
             Chittagong &rarr; 
             Chittagong &rarr; 
             Chittagong &rarr; 
             Cox&apos;s Bazar
-          </p>
+          </p> */}
           {/* Tour details */}
           <div className="pb-4">
             <p className="text-sm line-clamp-3">{tour.description}</p>

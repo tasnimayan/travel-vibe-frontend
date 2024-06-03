@@ -28,11 +28,11 @@
   background-color: orange;
   color: white;
 }
-.button.secondary {
+.button.tertiary {
   background-color: orange;
   color: white;
 }
-.button.secondary:hover {
+.button.tertiary:hover {
   background-color: white;
   color: black;
 }

@@ -1,15 +1,16 @@
 
 import ProfileAside from '../../components/aside/ProfileAside';
 import SocialPost from '../Users/SocialPost';
-import CommunityLayout from './../../layout/CommunityLayout';
 import CreatePostCard from './../../components/user/CreatePostCard';
 import PopularTours from '../../components/aside/PopularTours';
 import CommunityMenu from '../../components/aside/CommunityMenu';
 import Following from './../../components/aside/Following';
+import ScrollLoader from './../../components/utility/ScrollLoader';
 
 const FeedPage = () => {
   return (
-    <>
+    <div className='relative'>
+      <ScrollLoader />
       <div className='grid grid-cols-12 gap-x-8 mb-8 px-12'>
         {/* Left Column starts from here */}
         <div className="col-span-3 flex flex-col gap-4">
@@ -44,7 +45,7 @@ const FeedPage = () => {
         </div>
 
       </div>
-    </>
+    </div>
   );
 };
 
