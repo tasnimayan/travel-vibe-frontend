@@ -35,6 +35,7 @@ const HomePage = () => {
       <div className='container mx-auto container-pad bg-slate-200'>
         <SectionHeading 
           title="Thrilling Tour Plans"
+          subtitle="Get best value plans for your next trip"
           align="center"
         />
         <ThrillingTours />

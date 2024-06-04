@@ -70,7 +70,7 @@ const TourDetailsPage = () => {
                       <div className='flex justify-end mt-4'>
                         <button className='flex items-center justify-center border w-10 h-10 rounded-md border-gray-200 mr-3 hover:bg-green-600 hover:text-white active:border-gray-700'><FaRegHeart/></button>
                         <button className='flex items-center justify-center border w-10 h-10 rounded-md border-gray-200 mr-3 hover:bg-green-600 hover:text-white active:border-gray-700'><CiShare2/></button>
-                        <button className='h-10 px-4 rounded-md bg-green-600 hover:bg-green-700 text-white border active:border-gray-700'>Book Now</button>
+                        <button className='h-10 px-4 rounded-md bg-green-600 hover:bg-green-700 text-white border active:border-gray-700 whitespace-nowrap'>Book Now</button>
                         
                       </div>
                     </div>

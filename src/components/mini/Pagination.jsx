@@ -7,7 +7,6 @@ const Pagination = (props) => {
   
   return (
     <div className="flex justify-center mt-10 space-x-2">
-
       <a href={currentPage > 2?`${url}?page=${currentPage-1}`:`${url}`}
           className="px-2 py-1 sm:px-4 sm:py-2 mt-2 text-gray-600 border rounded-lg hover:bg-gray-100 focus:outline-none">
           <FaChevronLeft className='inline-block'/>

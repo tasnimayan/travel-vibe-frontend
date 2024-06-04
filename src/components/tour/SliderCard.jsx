@@ -1,4 +1,5 @@
 import { IoShareSocial } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const SliderCard = ({tour}) => {
   return (
@@ -16,7 +17,7 @@ const SliderCard = ({tour}) => {
             <span className="flex justify-center items-center border bg-white rounded-full text-gray-700 mr-4" style={{width:'30px', height:"30px"}}>
               <IoShareSocial />
             </span>
-            <button className="btn btn-sm bg-blue-600 border-0 text-xs font-normal text-white rounded-full px-6">Explore</button>
+            <Link to={`/tours/${tour._id}`} className="btn btn-sm bg-blue-600 border-0 text-xs font-normal text-white rounded-full px-6">Explore</Link>
           </div>
         </div>
       </div>

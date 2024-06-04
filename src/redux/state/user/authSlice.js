@@ -22,6 +22,34 @@ export const fetchUser = createAsyncThunk(
   }
 )
 
+export const fetchUserProfile = createAsyncThunk(
+  'user/fetchUserProfile',
+  async (userId) => {
+    let  URL = `${BASE_URL}/api/v1/users/profile/`
+    const response = await axios.get(URL, {headers:{authorization:'Bearer ' + Cookies.get('tvUserToken')}});
+    return response.data.data;
+  }
+);
+
+export const fetchSignUp = async (userData)=>{
+  let URL = `${BASE_URL}/api/v1/users/signup`
+  const response = await axios.post(URL,userData);
+  if(response.status!== 201){
+    return false
+  }
+  Cookies.set('tvUserToken',response.data.token)
+  return true;
+}
+export const fetchOtpVerification = async (otp)=>{
+  let URL = `${BASE_URL}/api/v1/users/verify/${otp}`
+  let token = Cookies.get('tvUserToken')
+  const response = await axios.get(URL,{headers:{authorization:'Bearer '+ token}});
+  if(response.status !== 200){
+    return false
+  }
+  return true;
+}
+
 export const authSlice = createSlice({
   name: "auth",
   initialState: {

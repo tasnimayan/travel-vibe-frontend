@@ -1,5 +1,6 @@
 
 const ProfileAside = ({profile}) => {
+    const BASE_URL = import.meta.env.VITE_BASE_URL
     if(!profile){
         return <>No profile found</>
     }
@@ -7,7 +8,7 @@ const ProfileAside = ({profile}) => {
     <div className="w-full max-w-sm bg-white rounded-2xl shadow overflow-hidden">
         <div className="flex flex-col items-center w-full mx-auto p-4">
             <div className="flex h-32 w-full justify-center rounded-xl" >
-                <img src={profile.photo} className="flex h-32 w-full justify-center rounded-xl bg-cover" /> 
+                <img src={BASE_URL+ profile.photo} className="flex h-32 w-full justify-center rounded-xl bg-cover" /> 
             </div> 
             <div className="mt-4 flex flex-col items-center">
                 <h4 className="text-xl font-bold text-navy-700 dark:text-white">

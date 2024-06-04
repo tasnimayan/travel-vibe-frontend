@@ -14,13 +14,14 @@ import AccountRecoverPage from './../pages/Users/AccountRecoverPage';
 import CreateTourPage from '../pages/Tours/CreateTourPage'
 import TourHomePage from '../pages/Tours/TourHomePage'
 import Itinerary from '../components/tour/Itinerary'
-import ComponentGallery from '../pages/ComponentGallery'
 import GuidesPage from '../pages/Guides/GuidesPage'
 import HotelsHomePage from '../pages/Hotels/HotelsHomePage'
 import FeedPage from '../pages/Community/FeedPage'
 import HomePage from './../pages/HomePage';
 import DashboardLayout from '../layout/DashboardLayout'
 import GeneralLayout from '../layout/GeneralLayout'
+import GuideProfile from '../pages/Guides/GuideProfile'
+import OtpPage from '../pages/Users/OtpVerify'
 
 
 const Router = () => {
@@ -30,6 +31,7 @@ const Router = () => {
         <Route element={<GeneralLayout/>} >
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/signup' element={<SignUpPage />} />
+                <Route path='/user/verify' element={<OtpPage />} />
         </Route>
 
         <Route element={<DashboardLayout/>}>
@@ -53,6 +55,8 @@ const Router = () => {
 
                 {/* ======== Guide related routes ======== */}
                 <Route path='/guides' element={<GuidesPage/>} />
+                <Route path='/guides/:guideId' element={<GuideProfile/>} />
+
                 {/* ======== Hotels related routes ======== */}
                 <Route path='/hotels' element={<HotelsHomePage/>} />
                 <Route path='*' element = {<ErrorPage/>} />

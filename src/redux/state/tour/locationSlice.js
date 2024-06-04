@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+const BASE_URL = import.meta.env.VITE_BASE_URL 
 
 export const fetchPopularLocations = createAsyncThunk(
   'tour/fetchPopularLocations',
   async () => {
-    let  URL = 'http://localhost:8000/api/v1/tours/top-location'
+    let  URL = BASE_URL+'/api/v1/tours/top-location'
     const response = await axios.get(URL);
     return response.data.data;
   }
@@ -12,7 +13,7 @@ export const fetchPopularLocations = createAsyncThunk(
 export const fetchNearbyLocations = createAsyncThunk(
   'tour/fetchNearbyLocations',
   async ({country,location}) => {
-    let  URL = `http://localhost:8000/api/v1/tours/nearby-location?country=${country}&location=${location}`
+    let  URL = `${BASE_URL}/api/v1/tours/nearby-location?country=${country}&location=${location}`
     const response = await axios.get(URL);
     return response.data.data;
   }

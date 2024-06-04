@@ -1,7 +1,5 @@
 
 const ProfilePage = () => {
-  // fetch User Profile Data from API
-
   return (
     <div>
       <div className="mx-4 mt-24 bg-white shadow-xl rounded-lg text-gray-900">

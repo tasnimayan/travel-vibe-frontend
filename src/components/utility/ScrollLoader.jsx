@@ -1,7 +1,7 @@
 
 const ScrollLoader = () => {
   return (
-    <div className='absolute top-0 left-0 w-full h-full transparent z-50'>
+    <div className='relative top-0 left-0 w-full h-full transparent z-50'>
       <div className="fixed w-full bg-black bg-opacity-50 h-full flex items-center justify-center">
         <button disabled className="text-white h-auto inline-flex items-center justify-center rounded-full transition-colors text-2xl font-bold px-4 py-3 sm:px-6">
           <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

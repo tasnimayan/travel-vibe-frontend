@@ -20,6 +20,7 @@ const Nav = () => {
       dispatch(fetchUser())
     }
   },[dispatch])
+  
   return (
     <div className="top-nav w-full bg-white fixed z-50 shadow">
       <div className="px-4 py-3 text-gray-900 font-medium capitalize flex items-center justify-between">
@@ -47,6 +48,14 @@ const Nav = () => {
             <MdTravelExplore className="mr-1 inline-block"/>
             <span className="hidden md:inline-block">Tour</span>
           </NavLink>
+
+          <NavLink to="/guides"
+            className={({isActive})=>{
+              return isActive? "nav-item active" : "nav-item"
+            }}>
+            <FaMapLocationDot className="mr-1 inline-block"/>
+            <span className="hidden md:inline-block">Guide</span>
+          </NavLink>
          
           <NavLink to="/hotels"
             className={({isActive})=>{
@@ -54,14 +63,6 @@ const Nav = () => {
             }}>
             <MdHotel className="mr-1 inline-block"/>
             <span className="hidden md:inline-block">Hotel</span>
-          </NavLink>
-          
-          <NavLink to="/guides"
-            className={({isActive})=>{
-              return isActive? "nav-item active" : "nav-item"
-            }}>
-            <FaMapLocationDot className="mr-1 inline-block"/>
-            <span className="hidden md:inline-block">Guide</span>
           </NavLink>
           
           <NavLink to="/community"

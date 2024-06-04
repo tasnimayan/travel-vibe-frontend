@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
+const BASE_URL = import.meta.env.VITE_BASE_URL 
 export const fetchReviews = createAsyncThunk(
   'tour/fetchReviews',
   async (tourId) => {
-      let  URL = `http://localhost:8000/api/v1/tours//tour/${tourId}/reviews`
+      let  URL = `${BASE_URL}/api/v1/tours//tour/${tourId}/reviews`
       const response = await axios.get(URL);
       return response.data.data;
   }

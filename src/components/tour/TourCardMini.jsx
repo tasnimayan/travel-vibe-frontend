@@ -1,16 +1,17 @@
 import { CiCalendar} from "react-icons/ci"; 
 import { FaStar } from "react-icons/fa";
 import { IoIosAirplane } from "react-icons/io";
+const BASE_URL= import.meta.env.VITE_BASE_URL
 
 
-const TourCardMini = () => {
+const TourCardMini = ({data}) => {
   return (
     <div className="bg-white rounded overflow-hidden group/cardGroup">
       <div className="relative w-full">
         <div className="relative group/cardGallerySlider">
           <div className="w-full overflow-hidden h-80">
-            <a className="flex items-center justify-center w-full h-full" href="/listing-stay-detail">
-                <img alt="listing card gallery" loading="lazy" decoding="async" data-nimg="fill" className="object-cover w-full h-full top-0 right-0 left-0 bottom-0 text-transparent group-hover/cardGroup:scale-110 transition-transform duration-500" src="https://plus.unsplash.com/premium_photo-1675745329954-9639d3b74bbf?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <a className="flex items-center justify-center w-full h-full" href={`/tours/${data._id}`}>
+                <img alt="listing card gallery" loading="lazy" decoding="async" data-nimg="fill" className="object-cover w-full h-full top-0 right-0 left-0 bottom-0 text-transparent group-hover/cardGroup:scale-110 transition-transform duration-500" src={BASE_URL+data.images[0]} />
             </a>
           </div>
           {/* Image change Button */}
@@ -47,18 +48,18 @@ const TourCardMini = () => {
             <FaStar />
             <FaStar />
           </div>
-          <span className="font-medium ">4.8</span>
+          <span className="font-medium ">{data.ratingsAverages}</span>
           <span className="text-gray-400">(28 Review)
           </span>
         </div>
         <div className="space-y-2 px-4">
           <div className="flex items-center space-x-2">
             <h2 className="font-semibold capitalize text-neutral-900 dark:text-white text-base">
-              <span className="line-clamp-1 hover:text-green-700 cursor-pointer">Best Western Cedars Hotel </span>
+              <span className="line-clamp-1 hover:text-green-700 cursor-pointer">{data.title}</span>
             </h2>
           </div>
           <div className="flex items-center text-neutral-500 dark:text-neutral-400 text-sm space-x-1.5">
-            <CiCalendar /> 4 days
+            <CiCalendar />{data.duration}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -72,7 +73,7 @@ const TourCardMini = () => {
         <div className="flex justify-between items-center px-4">
           <div className="flex flex-col">
             <span className="text-xs font-semibold">Starting from:</span>
-            <span className="text-xl font-bold text-green-600">$120.00</span>
+            <span className="text-xl font-bold text-green-600">${data.price}</span>
             <span className="text-xs text-neutral-500 dark:text-neutral-400 font-normal">Per Person</span>
             
           </div>

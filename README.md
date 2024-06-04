@@ -48,17 +48,28 @@ $ npm run build
 ## Tools
 
 - [React](https://reactjs.org/)
-
 - [Node](https://nodejs.org/en/)
+- [MongoDB](https://mongodb.com/)
+- [Redux](https://redux.js.org/)
 
 ## Screenshots
 
 # Home Page
 
-![Home Page](https://github.com/tasnimayan/travel-vibe-frontend/blob/main/public/screenshot/home.png)
+![Home Page](https://github.com/tasnimayan/travel-vibe-frontend/blob/main/public/screenshot/home_page.png)
 
-## Live Link
+# Tour Page
 
-## Backend
+![Tour Page](https://github.com/tasnimayan/travel-vibe-frontend/blob/main/public/screenshot/tour_page.png)
 
-<a href="https://github.com/tasnimayan/travel-vibe">Travel Vibe Backend</a>
+# Guide Page
+
+![Guide Page](https://github.com/tasnimayan/travel-vibe-frontend/blob/main/public/screenshot/guide_page.png)
+
+# Login Page
+
+![Login Page](https://github.com/tasnimayan/travel-vibe-frontend/blob/main/public/screenshot/login_page.png)
+
+## <a href="travelvibe.tasnimayan.dev">Live Link</a>
+
+## <a href="https://github.com/tasnimayan/travel-vibe">Backend</a>
