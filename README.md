@@ -70,6 +70,6 @@ $ npm run build
 
 ![Login Page](https://github.com/tasnimayan/travel-vibe-frontend/blob/main/public/screenshot/login_page.png)
 
-## <a href="travelvibe.tasnimayan.dev">Live Link</a>
+## <a href="https://travelvibe.tasnimayan.dev">Live Link</a>
 
 ## <a href="https://github.com/tasnimayan/travel-vibe">Backend</a>
